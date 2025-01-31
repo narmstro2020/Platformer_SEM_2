@@ -15,9 +15,24 @@ public class Playing extends State implements Statemethods {
 	private PauseOverlay pauseOverlay;
 	private boolean paused = false;
 
+	// TODO: add an int field named xLvlOffset
+	// TODO: add an int field named leftBorder and assign (int) (0.2 * Game.GAME_WIDTH) to it
+	// TODO: add an int field named rightBorder and assign (int) (0.8 * Game.GAME_WIDTH) to it
+	// TODO: add an int field named lvlTilesWide and assign to LoadSave.GetLevelData()[0].length
+	// TODO: add an int field named maxTilesOffset and assign lvlTilesWide - Game.TILES_IN_WIDTH to it
+	// TODO: add an int field named maxLvlOffsetX and assign maxTilesOffset * Game.TILE_SIZE to it
+
 	public Playing(Game game) {
 		super(game);
 		initClasses();
+		// TODO:  add the commented out code here
+		// if (!paused) {
+		// 	levelManager.update();
+		// 	player.update();
+		// 	checkCloseToBorder();
+		// } else {
+		// 	pauseOverlay.update();
+		// }
 	}
 
 	private void initClasses() {
@@ -37,12 +52,28 @@ public class Playing extends State implements Statemethods {
 		}
 	}
 
+	// TODO:  add the commented out code here
+	// private void checkCloseToBorder() {
+	// 	int playerX = (int) player.getHitbox().x;
+	// 	int diff = playerX - xLvlOffset;
+	// 	if (diff > rightBorder)
+	// 		xLvlOffset += diff - rightBorder;
+	// 	else if (diff < leftBorder)
+	// 		xLvlOffset += diff - leftBorder;
+	// 	if (xLvlOffset > maxLvlOffsetX)
+	// 		xLvlOffset = maxLvlOffsetX;
+	// 	else if (xLvlOffset < 0)
+	// 		xLvlOffset = 0;
+	// }
+
 	@Override
 	public void draw(Graphics g) {
-		levelManager.draw(g);
-		player.render(g);
+		levelManager.draw(g); // TODO: also pass in xLvlOffset
+		player.render(g); // TODO: also pass in xLvlOffset
 
 		if (paused)
+			// TODO: call g.setColor and pass in a new Color(0, 0, 0, 150)
+			// TODO: call g.fillRect and pass in 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT
 			pauseOverlay.draw(g);
 	}
 

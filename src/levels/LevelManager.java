@@ -28,11 +28,13 @@ public class LevelManager {
 			}
 	}
 
-	public void draw(Graphics g) {
-		for (int j = 0; j < Game.TILES_IN_HEIGHT; j++)
+	public void draw(Graphics g) { // TODO: also pass in an int lvlOffset
+		for (int j = 0; j < Game.TILES_IN_HEIGHT; j++) // TODO: replace Game.TILES_IN_HEIGHT with levelOne.getLevelData()[0].length
 			for (int i = 0; i < Game.TILES_IN_WIDTH; i++) {
 				int index = levelOne.getSpriteIndex(i, j);
 				g.drawImage(levelSprite[index], Game.TILES_SIZE * i, Game.TILES_SIZE * j, Game.TILES_SIZE, Game.TILES_SIZE, null);
+				// TODO: replace g.drawImage in line 35 with
+				// g.drawImage(levelSprite[index], Game.TILES_SIZE * i - lvlOffset, Game.TILES_SIZE * j, Game.TILES_SIZE, Game.TILES_SIZE, null)
 			}
 	}
 

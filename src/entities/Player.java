@@ -39,8 +39,16 @@ public class Player extends Entity {
 		setAnimation();
 	}
 
+	// TODO: add an int parameter to this method named lvlOffset
 	public void render(Graphics g) {
-		g.drawImage(animations[playerAction][aniIndex], (int) (hitbox.x - xDrawOffset), (int) (hitbox.y - yDrawOffset), width, height, null);
+
+		g.drawImage(
+				animations[playerAction][aniIndex],
+				(int) (hitbox.x - xDrawOffset), // TODO: subtract level offset from this argument after the casting.
+				(int) (hitbox.y - yDrawOffset),
+				width,
+				height,
+				null);
 //		drawHitbox(g);
 	}
 
@@ -90,6 +98,14 @@ public class Player extends Entity {
 
 		if (jump)
 			jump();
+
+		// TODO: Replace lines 109 and 110 with this commented out code.
+		// if (!inAir){
+		// 	if((!left && !right) || (right && left)){
+		// 		return;
+		// 	}
+		// }
+
 		if (!left && !right && !inAir)
 			return;
 
