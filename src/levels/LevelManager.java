@@ -29,8 +29,8 @@ public class LevelManager {
 	}
 
 	public void draw(Graphics g) { // TODO: also pass in an int lvlOffset
-		for (int j = 0; j < Game.TILES_IN_HEIGHT; j++) // TODO: replace Game.TILES_IN_HEIGHT with levelOne.getLevelData()[0].length
-			for (int i = 0; i < Game.TILES_IN_WIDTH; i++) {
+		for (int j = 0; j < Game.TILES_IN_HEIGHT; j++)
+			for (int i = 0; i < levelOne.getLevelData()[0].length; i++) { // TODO: replace Game.TILES_IN_WIDTH with levelOne.getLevelData()[0].length
 				int index = levelOne.getSpriteIndex(i, j);
 				g.drawImage(levelSprite[index], Game.TILES_SIZE * i, Game.TILES_SIZE * j, Game.TILES_SIZE, Game.TILES_SIZE, null);
 				// TODO: replace g.drawImage in line 35 with
