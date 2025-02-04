@@ -10,6 +10,8 @@ import main.Game;
 import ui.PauseOverlay;
 import utilz.LoadSave;
 
+import static utilz.Constants.UI.Environment.*;
+
 public class Playing extends State implements Statemethods {
 	private Player player;
 	private LevelManager levelManager;
