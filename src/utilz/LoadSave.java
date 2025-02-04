@@ -23,6 +23,10 @@ public class LoadSave {
 	public static final String VOLUME_BUTTONS = "volume_buttons.png";
 	// TODO: add a String MENU_BACKGROUND_IMG and assign "background_menu.png" to it.
 	// TODO: you should make sure that this file is in the res folder if not download it.
+	// TODO: (2025-02-04): add a String PLAYING_BG_IMG and assign "playing_bg_img.png" to it
+	// TODO: (2025-02-04): add a String BIG_CLOUDS and assign "big_clouds.png" to it
+	// TODO: (2025-02-04): add a String SMALL_CLOUDS and assign "small_clouds.png" to it
+
 
 	public static BufferedImage GetSpriteAtlas(String fileName) {
 		BufferedImage img = null;

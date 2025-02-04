@@ -8,6 +8,7 @@ import entities.Player;
 import levels.LevelManager;
 import main.Game;
 import ui.PauseOverlay;
+import utilz.LoadSave;
 
 public class Playing extends State implements Statemethods {
 	private Player player;
@@ -22,17 +23,20 @@ public class Playing extends State implements Statemethods {
 	// TODO: add an int field named maxTilesOffset and assign lvlTilesWide - Game.TILES_IN_WIDTH to it
 	// TODO: add an int field named maxLvlOffsetX and assign maxTilesOffset * Game.TILE_SIZE to it
 
+	// TODO: (2025-02-04): add a BufferedImage named backgroundImg, bigCloud, smallCloud
+	// TODO: (2025-02-04): add an int[] named smallCloudPos
+	// TODO: (2025-02-04): Add a Random named rnd and intiailize to new Random();
+
 	public Playing(Game game) {
 		super(game);
 		initClasses();
-		// TODO:  add the commented out code here
-		// if (!paused) {
-		// 	levelManager.update();
-		// 	player.update();
-		// 	checkCloseToBorder();
-		// } else {
-		// 	pauseOverlay.update();
-		// }
+
+		backgroundImg = LoadSave.GetSpriteAtlas(LoadSave.PLAYING_BG_IMG);
+		bigCloud = LoadSave.GetSpriteAtlas(LoadSave.BIG_CLOUDS);
+		smallCloud = LoadSave.GetSpriteAtlas(LoadSave.SMALL_CLOUDS);
+		smallCloudsPos = new int[8];
+		for (int i = 0; i < smallCloudsPos.length; i++)
+			smallCloudsPos[i] = (int) (90 * Game.SCALE) + rnd.nextInt((int) (100 * Game.SCALE));
 	}
 
 	private void initClasses() {
@@ -68,6 +72,10 @@ public class Playing extends State implements Statemethods {
 
 	@Override
 	public void draw(Graphics g) {
+		// TODO: (2025-02-04): call g.drawImage() passing in backgroundIMg, 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT, null
+
+		// TODO: (2025-02-04): call drawClouds() passing in g
+
 		levelManager.draw(g); // TODO: also pass in xLvlOffset
 		player.render(g); // TODO: also pass in xLvlOffset
 
@@ -76,6 +84,16 @@ public class Playing extends State implements Statemethods {
 			// TODO: call g.fillRect and pass in 0, 0, Game.GAME_WIDTH, Game.GAME_HEIGHT
 			pauseOverlay.draw(g);
 		}
+	}
+
+	public void drawClouds(Graphics g) {
+
+		// TODO: (2025-02-04): for loop from int i = 0; i < 3; i++
+		// TODO: (2025-02-04): call g.drawImage() passing in bigCloud, i * BIG_CLOUD_WIDTH - (int) (xLvlOffset * 0.3), (int) (204 * Game.SCALE), BIG_CLOUD_WIDTH, BIG_CLOUD_HEIGHT, null
+
+		// TODO: (2025-02-04): for loop from int i = 0; i < smallCloudsPos.length; i++
+		// TODO: (2025-02-04): call g.drawImage() passing in smallCloud, SMALL_CLOUD_WIDTH * 4 * i - (int) (xLvlOffset * 0.7), smallCloudsPos[i], SMALL_CLOUD_WIDTH, SMALL_CLOUD_HEIGHT, null
+
 	}
 
 	@Override

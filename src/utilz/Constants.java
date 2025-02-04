@@ -5,6 +5,22 @@ import main.Game;
 public class Constants {
 
 	public static class UI {
+
+		public static class Environment {
+			// TODO: (2025-02-04): all fields are public static final ints
+			// TODO: (2025-02-04): BIG_CLOUD_WIDTH_DEFAULT assign 448 to it
+			// TODO: (2025-02-04): BIG_CLOUD_HEIGHT_DEFAULT assign 101 to it
+			// TODO: (2025-02-04): SMALL_CLOUD_WIDTH_DEFAULT assign 74 to it
+			// TODO: (2025-02-04): SMALL_CLOUD_HEIGHT_DEFAULT assign 24 to it
+
+			// TODO: (2025-02-04): BIG_CLOUD_WIDTH assign (int) (BIG_CLOUD_WIDTH_DEFAULT * Game.SCALE) to it
+			// TODO: (2025-02-04): BIG_CLOUD_HEIGHT assign (int) (BIG_CLOUD_HEIGHT_DEFAULT * Game.SCALE) to it
+			// TODO: (2025-02-04): SMALL_CLOUD_WIDTH assign (int) (SMALL_CLOUD_WIDTH_DEFAULT * Game.SCALE) to it
+			// TODO: (2025-02-04): SMALL_CLOUD_HEIGHT assign (int) (SMALL_CLOUD_HEIGHT_DEFAULT * Game.SCALE) to it
+
+
+		}
+
 		public static class Buttons {
 			public static final int B_WIDTH_DEFAULT = 140;
 			public static final int B_HEIGHT_DEFAULT = 56;
