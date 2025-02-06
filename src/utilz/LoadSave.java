@@ -50,7 +50,7 @@ public class LoadSave {
     }
 
     public static ArrayList<Crabby> GetCrabs() {
-        // TODO: (2025-02-06):  create a BufferedImage named image and assign GetSpriteAtlas(LEVEL_ONE_DATA) to it
+        // TODO: (2025-02-06):  create a BufferedImage named img and assign GetSpriteAtlas(LEVEL_ONE_DATA) to it
         // TODO: (2025-02-06): create a new ArrayList<Crabby> named list and assign new ArrayList<>() to it.
         // TODO: (2025-02-06): start of a double nested for loop
         // outer for loop starts at 0 ends when less than img.getHeight(), increments by one each time, use j for variable
