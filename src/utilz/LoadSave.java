@@ -59,7 +59,7 @@ public class LoadSave {
         // TODO: (2025-02-06): create an int named value and assign color.getGreen() to it
         // TODO: (2025-02-06): start of if statement
         // check if the value is equal to CRABBY
-        // when true add new Crabby(i * Game.TILES_SIZE, j * Game.TILES_SIZE) to the list
+        list.add(new Crabby(i * Game.TILES_SIZE, j * Game.TILES_SIZE));
         // TODO: (2025-02-06): end of if statement
         // TODO: (2025-02-06): end of the double nested for loop
         // TODO: (2025-02-06: return list
