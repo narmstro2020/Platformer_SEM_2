@@ -15,6 +15,7 @@ import static utilz.Constants.UI.Environment.*;
 public class Playing extends State implements Statemethods {
 	private Player player;
 	private LevelManager levelManager;
+	// TODO: (2025-02-06): add an EnemyManager named enemyManager
 	private PauseOverlay pauseOverlay;
 	private boolean paused = false;
 
@@ -45,6 +46,7 @@ public class Playing extends State implements Statemethods {
 
 	private void initClasses() {
 		levelManager = new LevelManager(game);
+		// TODO: (2025-02-06): assign new EnemyManager(this) to enemyManager
 		player = new Player(200, 200, (int) (64 * Game.SCALE), (int) (40 * Game.SCALE));
 		player.loadLvlData(levelManager.getCurrentLevel().getLevelData());
 		pauseOverlay = new PauseOverlay(this);
@@ -55,6 +57,7 @@ public class Playing extends State implements Statemethods {
 		if (!paused) {
 			levelManager.update();
 			player.update();
+			// TODO: (2025-02-06): called enemyManager.update()
 			checkCloseToBorder();  // TODO: (2025-02-06):  Add this
 		} else {
 			pauseOverlay.update();
@@ -83,6 +86,7 @@ public class Playing extends State implements Statemethods {
 
 		levelManager.draw(g); // TODO: also pass in xLvlOffset
 		player.render(g); // TODO: also pass in xLvlOffset
+		// TODO: (2025-02-06):  call enemyManger's draw method pasing in g and xLvlOffset
 
 		if (paused) {
 			// TODO: call g.setColor and pass in a new Color(0, 0, 0, 150)

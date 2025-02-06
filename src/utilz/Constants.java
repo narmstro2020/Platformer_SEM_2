@@ -6,6 +6,36 @@ public class Constants {
 
 	public static class UI {
 
+		public static class EnemyConstants{
+			// TODO: (2025-02-06): create the following
+			// all are public static final
+			// int named IDLE set to 0
+			// int named RUNNING set to 1
+			// int named ATTACK set to 2
+			// int named HIT set to 3
+			// int named DEAD set to 4
+
+			// int named CRABBY_WIDTH_DEFAULT set to 72
+			// int named CRABBY_HEIGHT_DEFAULT set to 32
+
+			// int named CRABBY_WIDTH assign (int) (CRABBY_WIDTH_DEFAULT * Game.Scale)
+			// int named CRABBY_HEIGHT assign (int) (CRABBY_HEIGHT_DEFAULT * Game.Scale)
+
+			public static int GetSpriteAmount(int enemy_type, int enemy_state){
+				switch (enemy_type){
+					case CRABBY:
+						switch(enemy_state){
+							case IDLE -> return 9;
+							// TODO: (2025-02-06): add cases for the following
+							// RUNNING return 6, ATTACK return 7, HIT return 4, DEAD return 5
+						}
+				}
+
+				return 0;
+			}
+
+		}
+
 		public static class Environment {
 			// TODO: (2025-02-04): all fields are public static final ints
 			// TODO: (2025-02-04): BIG_CLOUD_WIDTH_DEFAULT assign 448 to it
